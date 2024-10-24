@@ -1,0 +1,269 @@
+
+@media (min-width: 1024px){
+    //[data-apply="mobile"]{display: none !important;}
+}
+
+@media (max-width: 1200px) {
+    .address{
+        display: none;
+    }
+    .address-view{
+        position: absolute;
+        z-index: 2;
+        bottom: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 1px solid rgba(221, 221, 221, 1);
+        box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+        border-radius: 99rem;
+        padding: .7rem 1.2rem;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        span{
+            white-space: nowrap;
+            font-weight: 600;
+        }
+        .icon-gps{
+            vertical-align: middle;
+            margin-top: -.1rem;
+            margin-right: .4rem;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .address{
+        display: none;
+    }
+}
+
+// 모바일에서 안보여지는 엘리먼트
+@media (max-width : 1024px) {
+    .outer{display: none;}
+    [data-widget="spatial"],
+    [data-widget="save"],
+    [data-widget="index"],
+    [data-widget="legend"],
+    [data-widget="division"],
+    .option__add:has([data-widget="draw"]),
+    [data-widget="reset"]{display: none !important;}
+}
+
+// PC에서 모바일 안보여야하는 것들
+.btn__mobile--menu{display: none;}
+.mobile-only-apply{display: none;
+    margin-top: 1rem;
+    a{
+        display: inline-block;
+        vertical-align: top;
+        background-color: var(--color-active);
+        color: #fff;
+        font-size: 1.2rem;
+        padding: .7rem 0.9rem;
+        border-radius: .5rem;
+        .icon-arrow-white{
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 5px;
+            margin-top: -2px;
+            background: url(../images/icon/icon_next_white.svg) no-repeat 50% 50%;
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    // 기능 버튼
+    .cartography{
+        top: var(--lg-header);
+        flex-direction: column;
+        gap: .8rem 0;
+        align-items: flex-end;
+        .carto__item{
+            width: 4rem;
+            height: 4rem;
+            font-size: 0;
+            overflow: hidden;
+            .carto_name{display: none;}
+            .carto_thumb{
+                width: 100%;
+                height: 100%;
+                background-size: 1.6rem auto;
+                background-position: 50% 50%;
+            }
+
+        }
+        .btn__carto--menu{display: none;}
+        
+    }
+    .location{
+        top: 33.5rem;
+    }
+    .location__bar{
+        border: 0;
+        border-radius: 0;
+        background: none;
+        box-shadow: none;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        .btn__screen-zoomin{
+            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(204, 204, 204, 1);
+            background-color: #fff; 
+            border-radius: .8rem;
+            width: 4rem;
+            height: 4rem;
+        }
+        .btn__screen-zoomout{
+            background-color: #fff;
+            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(204, 204, 204, 1);
+            border-radius: .8rem;
+            width: 4rem;
+            height: 4rem;
+            margin-top: .8rem;
+        }
+    }
+    .option__add{
+        [data-widget="measure"]{
+            width: 4rem;
+            height: 4rem;
+            gap:0;
+            span{font-size: 0;}
+            
+        }
+    }
+    .option__list [data-widget]{
+        width: 4rem;
+        height: 4rem;
+        gap:0;
+        span{font-size: 0;}
+    }
+    .toolbar{
+        top: 43rem;
+    }
+    
+
+    // 패널
+    .list{
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: inherit;
+        width: 100%;
+        box-shadow: 0px -1px 20px 0px rgba(0, 0, 0, 0.1);
+        border-radius: 2rem 2rem 0 0;
+        background-color: #fff;
+        z-index: 10;
+    }
+    .pannel{
+        border-radius: 2rem 2rem 0 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: all 0.5s;
+        display: block !important;
+        opacity: 0;
+        visibility: hidden;
+        box-shadow: 0px -1px 20px 0px rgba(0, 0, 0, 0.1);
+        &[aria-hidden="false"]{
+            transform: translateY(0%);
+            visibility: visible;
+            opacity: 1;
+        }
+        &[aria-hidden="true"]{
+            transform: translateY(100%);
+        }
+        .content{
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: calc(100vh - 24rem);
+            //transition: all 1s;
+            &.mb_fn{
+                &[aria-hidden="true"]{
+                    max-height: 0;
+                }
+                
+            }
+        }
+        &:has(.mb_fn){
+            .btn__collapse{display: inline-block;}
+        }
+    }
+    .pannel__header{background-color: #fff;}
+    .pannel .btn__collapse{display: none;}
+
+    .content[aria-hidden=true]{display: block;}
+    
+    @import './mobile/TopSearch';
+    //@import './mobile/Category';
+    //@import './mobile/footMenu';
+    .total-area-view{
+        position: absolute;
+        display: none;
+        z-index: 1001;
+        left: 0;
+        top: 0;
+        line-height: 1;
+        border-radius: .4rem;
+        padding: .8rem 1.2rem;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        font-size: 1.4rem;
+        color: #111;
+        b{
+            color: var(--color-active);
+        }
+        sup{
+            font-size: .875em;
+        }
+        &.show{
+            display: block;
+        }
+    }
+
+    @import './mobile/Toolbar';
+    /* drag */
+    //@import './mobile/Touch';
+
+    //@import './mobile/LayerList';
+
+    @import './mobile/Tab';
+
+    .measure-group{
+        display: flex;
+    }
+    @import './mobile/SearchList';
+
+    .mobile-preview-btn{
+        display: block;
+        position: fixed;
+        top: 50%;
+        left: 1rem;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem 0;
+        z-index: 10;
+        button{
+            border: 1px solid #ddd;
+            padding: 3px 1rem;
+            background-color: #fff;
+        }
+    }
+    .mobile-only-apply{
+        display: block;
+    }
+
+    .list__type--01 > li{
+        height: auto;
+        padding: 1.2rem !important;
+    }
+}
