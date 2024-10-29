@@ -1,0 +1,32 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "your_database_name";
+
+// 연결 생성
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// 연결 확인
+if ($conn->connect_error) {
+    die("연결 실패: " . $conn->connect_error);
+}
+
+// 폼 데이터 가져오기
+$userName = $_POST['userName'];
+$userMail = $_POST['userMail'];
+$userWebsite = $_POST['userWebsite'];
+$userTelegram = $_POST['userTelegram'];
+$userMessage = $_POST['userMessage'];
+
+// SQL 쿼리 실행
+$sql = "INSERT INTO users (name, email, website, telegram, message) VALUES ('$userName', '$userMail', '$userWebsite', '$userTelegram', '$userMessage')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "데이터가 성공적으로 저장되었습니다!";
+} else {
+    echo "오류: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+?>

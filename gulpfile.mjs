@@ -1,20 +1,19 @@
-import gulp from 'gulp';
-import plumber from 'gulp-plumber';
-import * as sass from 'sass';
-import gulpSass from 'gulp-sass';
-import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'autoprefixer';
-import postCss from 'gulp-postcss';
-import rename from 'gulp-rename';
 import browserSync from 'browser-sync';
+import cssnano from 'cssnano';
+import { deleteSync } from 'del';
+import gulp from 'gulp';
+import babel from 'gulp-babel';
+import cached from 'gulp-cached';
 import concat from 'gulp-concat';
 import fileInclude from 'gulp-file-include';
-import cssnano from 'cssnano';
-import cached from 'gulp-cached';
-import { deleteSync } from 'del';
+import plumber from 'gulp-plumber';
+import postCss from 'gulp-postcss';
+import rename from 'gulp-rename';
+import gulpSass from 'gulp-sass';
+import sourcemaps from 'gulp-sourcemaps';
 import uglify from 'gulp-uglify';
-import cleanCss from 'gulp-clean-css';
-import babel from 'gulp-babel';
+import * as sass from 'sass';
 
 const sassCompiler = gulpSass(sass);
 const server = browserSync.create();
@@ -165,7 +164,7 @@ const initialBuild = gulp.series(cssReset, minifyCssReset);
 // Build task
 //const build = gulp.series(clean, initialBuild, gulp.parallel(html, gulp.series(styles, minifyStyles), vendors, scripts, images));
 
-const build = gulp.series(clean, initialBuild, gulp.parallel(html, gulp.series(styles, minifyStyles), vendors, scripts, images, fonts)); // fonts 추가
+const build = gulp.series(clean, initialBuild, gulp.parallel(html, gulp.series(styles, minifyStyles), scripts, images, fonts)); // fonts 추가
 
 // Default task
 export default gulp.series(build, serve);
@@ -174,3 +173,4 @@ export default gulp.series(build, serve);
 
 
 export { clean };
+
