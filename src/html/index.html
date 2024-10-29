@@ -6,6 +6,7 @@
     <title>GIS</title>
     <link rel="stylesheet" href="./assets/font/Pretendard.css">
     <link rel="stylesheet" href="./assets/css/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 <body>
 
@@ -14,106 +15,240 @@
         <div class="labs-container">
             <h1 class="logos"><a href="/"></a></h1>
             <div class="gnb-wraps">
-                <ul>
-                    <li><a href=""><span></span></a></li>
-                    <li><a href=""><span></span></a></li>
-                    <li><a href=""><span></span></a></li>
-                    <li><a href=""><span></span></a></li>
-                    <li><a href=""><span></span></a></li>
-                    <li><a href=""><span></span></a></li>
+                <ul class="gnb-move">
+                    <li><a href="" class="gnb-move-item" data-target="home"><span></span></a></li>
+                    <li><a href="" class="gnb-move-item" data-target="making"><span></span></a></li>
+                    <li><a href="" class="gnb-move-item" data-target="ventures"><span></span></a></li>
+                    <li><a href="" class="gnb-move-item" data-target="news"><span></span></a></li>
+                    <li><a href="" class="gnb-move-item" data-target="portfolio"><span></span></a></li>
+                    <li><a href="" class="gnb-move-item" data-target="contact"><span></span></a></li>
                 </ul>
             </div>
         </div>
     </header>
 
-
     <div class="labs-content">
-        <section class="labs-section">
+        <section class="labs-section labs-home" id="home">
             
         </section>
         <!-- e: section end line -->
-        <section class="labs-section">
-            
+        <section class="labs-section labs-making" id="making">
+            <div class="labs-section-title"><h2>MARKET MAKING</h2></div>
+            <div class="labs-row">
+                <div class="labs-container">
+                    <div class="labs-card">
+                        <div class="labs-card-img">
+                            <img src="./assets/images/making-01.jpg" alt="making-01">
+                        </div>
+                        <div class="labs-card-content">
+                            <h3>Card 1</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         <!-- e: section end line -->
-        <section class="labs-section">
-            
+        <section class="labs-section labs-ventures" id="ventures">
+            <div class="labs-section-title"><h2>VENTURES</h2></div>
+            <div class="labs-row">
+                <div class="labs-container">
+                    
+                </div>
+            </div>
         </section>
         <!-- e: section end line -->
-        <section class="labs-section">
-            
+        <section class="labs-section labs-news" id="news">
+            <div class="labs-section-title"><h2>NEWS</h2></div>
+            <div class="labs-row">
+                <div class="labs-container">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
         </section>
         <!-- e: section end line -->
-        <section class="labs-section">
-            
+        <section class="labs-section labs-portfolio" id="portfolio">
+            <div class="labs-section-title"><h2>PORTFOLIO</h2></div>
+            <div class="labs-row">
+                <div class="labs-container">
+                    <div class="grid-cols-4 mobile:grid-cols-2"></div>
+                </div>
+            </div>
         </section>
         <!-- e: section end line -->
-        <section class="labs-section labs-contact">
-            <form action="">
-                <input type="text" id="userName" name="">
-                <input type="text" id="userMail" name="">
-                <input type="text" id="userWebsite" name="">
-                <input type="text" id="userTelegram" name="">
-                <input type="text" id="userMessage" name="">
-            </form>
-
-            <button type="submit" id="submitBtn">Submit</button>
-
-            <script>
-                document.getElementById('submitBtn').addEventListener('click', function() {
-                    const userName = document.getElementById('userName').value;
-                    const userMail = document.getElementById('userMail').value;
-                    const userWebsite = document.getElementById('userWebsite').value;
-                    const userTelegram = document.getElementById('userTelegram').value;
-                    const userMessage = document.getElementById('userMessage').value;
-
-                    if (!userName) {
-                        alert('사용자 이름을 입력해주세요.');
-                        return;
-                    }
-                    if (!userMail || !validateEmail(userMail)) {
-                        alert('유효한 이메일 주소를 입력해주세요.');
-                        return;
-                    }
-                    if (!userWebsite) {
-                        alert('웹사이트 주소를 입력해주세요.');
-                        return;
-                    }
-                    if (!userTelegram) {
-                        alert('텔레그램 아이디를 입력해주세요.');
-                        return;
-                    }
-                    if (!userMessage) {
-                        alert('메시지를 입력해주세요.');
-                        return;
-                    }
-
-                    // AJAX 요청
-                    const xhr = new XMLHttpRequest();
-                    xhr.open('POST', 'save_data.php', true);
-                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                    xhr.onreadystatechange = function() {
-                        if (xhr.readyState == 4 && xhr.status == 200) {
-                            alert('데이터가 성공적으로 전송되었습니다!');
-                        }
-                    };
-                    xhr.send(`userName=${userName}&userMail=${userMail}&userWebsite=${userWebsite}&userTelegram=${userTelegram}&userMessage=${userMessage}`);
-                });
-
-                function validateEmail(email) {
-                const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                return re.test(email);
-                }
-
-            </script>
-            
+        <section class="labs-section labs-contact" id="contact">
+            <div class="labs-section-title"><h2>Contact</h2></div>
+            <div class="labs-row">
+                <div class="labs-container">
+                    <form action="">
+                        <input type="text" id="userName" name="">
+                        <input type="text" id="userMail" name="">
+                        <input type="text" id="userWebsite" name="">
+                        <input type="text" id="userTelegram" name="">
+                        <input type="text" id="userMessage" name="">
+                    </form>
+        
+                    <button type="submit" id="submitBtn">Submit</button>
+                </div>
+            </div>
         </section>
         <!-- e: section end line -->
-
-
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollToPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-<script src="assets/js/all.min.js"></script>
+        const menuItems = document.querySelectorAll(".gnb-move-item");
+
+        menuItems.forEach((item) => {
+            item.addEventListener("click", (e) => {
+            e.preventDefault(); // 기본 링크 이동 막기
+            const target = item.getAttribute("data-target");
+            const targetElement = document.querySelector(`#${target}`);
+            
+            if (targetElement) {
+                gsap.to(window, { duration: 1, scrollTo: targetElement });
+            }
+            });
+        });
+        const smoothscroll = {
+        passive: function() {
+            let supportsPassive = false;
+            try {
+                document.addEventListener('test', null, { get passive() { supportsPassive = true } });
+            } catch (e) {}
+            return supportsPassive;
+        },
+        init: function() {
+
+            const userAgent = navigator.userAgent.toLowerCase();
+
+            const isMobile = /iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
+            const isMac = /macintosh|mac os x/i.test(userAgent);
+            const isWindows = /windows/i.test(userAgent);
+            const isLinux = /linux/i.test(userAgent);
+
+            if(isMobile || isMac) return;
+            
+            //if (document.documentElement.classList.contains('mobile') || document.documentElement.classList.contains('mac')) return;
+
+            if (this.passive()) {
+                window.addEventListener('wheel', this.scrolling, { passive: false });
+            } else {
+                window.addEventListener('mousewheel', this.scrolling);
+                window.addEventListener('DOMMouseScroll', this.scrolling);
+            }
+        },
+        destroy: function() {
+            if (this.passive()) {
+                window.removeEventListener('wheel', this.scrolling);
+            } else {
+                window.removeEventListener('mousewheel', this.scrolling);
+                window.removeEventListener('DOMMouseScroll', this.scrolling);
+            }
+            gsap.killTweensOf(window, { scrollTo: true });
+        },
+        scrolling: function(event) {
+            event.preventDefault();
+
+            let scrollTime = 1;
+            let distanceOffset = 2.5;
+            let scrollDistance = (window.innerHeight / distanceOffset);
+            let delta = 0;
+
+            if (smoothscroll.passive()) {
+                delta = (event.wheelDelta / 120) || (-event.deltaY / 3);
+            } else {
+                if (typeof event.originalEvent.deltaY != 'undefined') {
+                    delta = (-event.originalEvent.deltaY / 120);
+                } else {
+                    delta = (event.originalEvent.wheelDelta / 120) || (-event.originalEvent.detail / 3);
+                }
+            }
+
+            let scrollTop = document.documentElement.scrollTop;
+            let finalScroll = scrollTop - parseInt(delta * scrollDistance);
+
+            gsap.to(window, {
+                duration: scrollTime,
+                scrollTo: { y: finalScroll, autoKill: true },
+                ease: 'power3.out',
+                overwrite: 5
+            });
+        }
+        };
+        smoothscroll.init();
+
+        const swiper = new Swiper('.swiper', {
+        loop: true,
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        // Navigation arrows
+        navigation: false,
+        // And if we need scrollbar
+        scrollbar: false,
+        });
+    });
+
+    document.getElementById('submitBtn').addEventListener('click', function() {
+        const userName = document.getElementById('userName').value;
+        const userMail = document.getElementById('userMail').value;
+        const userWebsite = document.getElementById('userWebsite').value;
+        const userTelegram = document.getElementById('userTelegram').value;
+        const userMessage = document.getElementById('userMessage').value;
+
+        if (!userName) {
+            alert('사용자 이름을 입력해주세요.');
+            return;
+        }
+        if (!userMail || !validateEmail(userMail)) {
+            alert('유효한 이메일 주소를 입력해주세요.');
+            return;
+        }
+        if (!userWebsite) {
+            alert('웹사이트 주소를 입력해주세요.');
+            return;
+        }
+        if (!userTelegram) {
+            alert('텔레그램 아이디를 입력해주세요.');
+            return;
+        }
+        if (!userMessage) {
+            alert('메시지를 입력해주세요.');
+            return;
+        }
+
+        // AJAX 요청
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'save_data.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+            alert('데이터가 성공적으로 전송되었습니다!');
+            }
+        };
+        xhr.send(`userName=${userName}&userMail=${userMail}&userWebsite=${userWebsite}&userTelegram=${userTelegram}&userMessage=${userMessage}`);
+    });
+
+    function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+    }
+
+
+</script>
 </body>
 </html>

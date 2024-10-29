@@ -1,4 +1,8 @@
-@charset "UTF-8";
+
+$container-sm : 1020px;
+$container-md : 1020px;
+$container : 1020px;
+$container-lg : 1020px;
 /* 초기화 */
 html {overflow-y:scroll}
 body {margin:0;padding:0;font-size:0.75em;font-family:'Pretendard', dotum, sans-serif;background:#fff}
@@ -41,9 +45,37 @@ box-shadow:0 0 5px #9ed4ff;
 border:1px solid #558ab7 !important;
 }
 
- img{
-    vertical-align: top;
-    max-width: 100%;
- }
+img{
+  vertical-align: top;
+  max-width: 100%;
+}
 
- 
+
+.labs{
+  &-container{}
+  &-row{}
+  &-header{}
+  &-content{}
+  &-content{}
+  &-section{
+    &-title{
+      
+    }
+  }
+  
+}
+.labs-header{
+}
+.logos{
+
+}
+.gnb-wraps{
+
+}
+.gnb-move-item{
+
+}
+
+.labs-section{
+
+}
