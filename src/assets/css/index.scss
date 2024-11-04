@@ -96,7 +96,36 @@ html{
   }
 }
 .gnb-wraps{
+  @media (max-width: 1000px) {
+    opacity: 0;
+    visibility: hidden;
 
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #000;
+    z-index: 1005;
+    .gnb-move{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      gap: 10px 0;
+      li>a{
+        font-family: Groovity;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 26.4px;
+        text-align: center;
+        color: #fff;
+        border: 0;
+      }
+    }
+  }
 }
 .gnb-move{
   display: flex;
@@ -124,6 +153,10 @@ html{
   padding-top: 140px;
   &-title{
     padding-bottom: 100px;
+    @media (max-width: 1000px) {
+      padding-bottom: 30px;
+      line-height: 26px;
+    }
     h2{
       color: #fff;
       font-family: Groovity;
@@ -131,6 +164,10 @@ html{
       font-weight: 400;
       line-height: 70.4px;
       text-align: center;
+      @media (max-width: 1000px) {
+        font-size: 24px;
+        line-height: 1;
+      }
     }
   }
 }
@@ -146,6 +183,16 @@ html{
     width: 1004px;
     padding-top: 280px;
   }
+  @media (max-width: 1000px) {
+    .monster{
+      width: 100%;
+      padding-top: 200px;
+    }
+    .wraps{
+      height: auto;
+      background-size: cover;
+    }
+  }
 }
 .labs-making{
   .labs{
@@ -153,7 +200,14 @@ html{
       display: grid;
       grid-template-columns: repeat(3, minmax(0,1fr));
       grid-gap: 50px 30px;
+      @media (max-width: 1000px) {
+        grid-gap: 30px 10px;
+      }
     }
+  }
+  @media (max-width: 1000px) {
+    margin-left: 40px;
+    padding-right: 40px;
   }
 }
 .labs-card{
@@ -255,6 +309,14 @@ html{
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 1250px) {
+    width: 100%;
+    height: 300px;
+    //padding: 6vw 0;
+    padding-top: 41.3%; 
+    padding-bottom: 40%;
+    
+  }
 }
 
 .contact-list{
@@ -305,7 +367,92 @@ html{
       font-size: 40px;
     }
   }
+  textarea.input{
+    height: 182px;
+  }
+  @media (max-width: 1250px) {
+    padding: 0 10% 0 25px;
+  }
+  @media (max-width: 1000px) {
+    gap: 4px 0;
+    li{
+      strong{
+        font-size: 18px;
+        width: 120px;
+      }
+      .input{
+        height: 30px;
+      }
+      textarea.input{
+        height: 52px;
+      }
+    }
+    .en{
+      display: none;
+    }
+  }
+  @media (max-width: 420px) {
+    gap: 2px 0;
+    li{
+      .input{
+        height: 17px;
+      }
+    }
+  }
 }
 body{
   padding-bottom: 120px;
+}
+
+.btn-mobile{
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 0;
+  background: none;
+  > span{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 12px;
+    height: 10px;
+    span{
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+      margin: 3px 0;
+      transition: background-color 0.3s;
+      &:nth-child(1){
+        transform: rotate(0deg);
+      }
+      &:nth-child(2){
+        transform: rotate(0deg);
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .labs-making .labs-container{
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    .labs-card-img img{
+      width: 100%;
+    }
+  }
+
+  .labs-ventures .labs-container{
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    .labs-picture .ficture{
+      img{
+        width: 100%;
+      }
+    }
+  }
+
+  .labs-portfolio .labs-container{
+    grid-gap: 20px 11.44%;
+  }
 }

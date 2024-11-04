@@ -24,6 +24,16 @@
                     <li><a href="" class="gnb-move-item" data-target="contact"><span>contact</span></a></li>
                 </ul>
             </div>
+
+
+            <button type="button" class="btn-mobile">
+                <span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+
         </div>
     </header>
 
@@ -288,7 +298,7 @@
                                 </li>
                                 <li>
                                     <strong>message:</strong>
-                                    <div class="fut"><input type="text" id="userMessage" class="input" name=""></div>
+                                    <div class="fut"><textarea name="" id="userMessage" class="input"></textarea></div>
                                 </li>
                                 <li class="en">
                                     <strong></strong>
@@ -416,23 +426,23 @@
 
         if (!userName) {
             alert('사용자 이름을 입력해주세요.');
-            return;
+            return false;
         }
         if (!userMail || !validateEmail(userMail)) {
             alert('유효한 이메일 주소를 입력해주세요.');
-            return;
+            return false;
         }
         if (!userWebsite) {
             alert('웹사이트 주소를 입력해주세요.');
-            return;
+            return false;
         }
         if (!userTelegram) {
             alert('텔레그램 아이디를 입력해주세요.');
-            return;
+            return false;
         }
         if (!userMessage) {
             alert('메시지를 입력해주세요.');
-            return;
+            return false;
         }
 
         // AJAX 요청
